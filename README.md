@@ -215,7 +215,7 @@ There are two realistic approaches:
 
   - Suitable if the organization’s identity governance mandates SAML for all internal tools.
 
-## Limitations and Production Readiness
+## Limitations and what it takes to got to production
 
 While the current implementation provides a solid foundation for the technical test, several limitations and production considerations need to be addressed before deploying to a live environment. Understanding these constraints helps set realistic expectations and plan for proper production deployment.
 
@@ -241,3 +241,6 @@ While the current implementation provides a solid foundation for the technical t
 - **No API Documentation**: Missing OpenAPI/Swagger documentation for API consumers
 - **Limited Validation**: Basic input validation without comprehensive data sanitization
 
+## Time spent on the task
+
+### 2h30 
