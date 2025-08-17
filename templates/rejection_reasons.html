@@ -2,6 +2,10 @@
 {% load review_extras %}
 {% block title %}Rejection reasons{% endblock %}
 {% block content %}
+<div>
+    <p>Reviewed Predictions: {{ reviewed_count }}</p>
+    <p>Pending Predictions: {{ pending_count }}</p>
+</div>
     <ul>
         {% for prediction in predictions %}
             <li>

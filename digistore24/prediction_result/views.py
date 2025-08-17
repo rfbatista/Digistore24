@@ -11,6 +11,15 @@ class RejectionReasonListView(LoginRequiredMixin, ListView):
     context_object_name = "predictions"
     ordering = ["-created_at"]
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        reviewed_count = self.get_queryset().filter(predictionreview__reviewed=True).distinct().count()
+        total_count = self.get_queryset().count()
+        pending_count = total_count - reviewed_count
+        context['reviewed_count'] = reviewed_count
+        context['pending_count'] = pending_count
+        return context
+
 
 @login_required
 def update_prediction(request, pk):
