@@ -2,62 +2,79 @@
 
 ## Setup
 
-### Dependencies Installation
+This guide will help you quickly set up and run the Digistore24 application on your local machine. Follow these steps:
 
-To install dependencies, you have two options:
+### 1. Install Dependencies
 
-1. Using uv:
+Choose one of the following methods:
 
-   ```bash
-   uv install
-   ```
+- **Using UV (recommended):**  
+  ```bash
+  uv install
+  ```
 
-2. Using pip and the requirements.txt file:
+- **Using Pip:**  
+  ```bash
+  pip install -r requirements.txt
+  ```
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 2. Set Up the Database
 
-### Migrate database
-1. using uv
-```bash
-	uv run python manage.py migrate
-```
-2. pip
-```bash
-	python manage.py migrate
-```
+Run the migrations to initialize your database schema:
 
-### Create user
-1. using uv
-```bash
+- **Using UV:**  
+  ```bash
+  uv run python manage.py migrate
+  ```
+
+- **Using Pip:**  
+  ```bash
+  python manage.py migrate
+  ```
+
+### 3. Create a Superuser
+
+Generate an administrative user to manage the application and to log in:
+
+- **Using UV:**  
+  ```bash
   uv run python manage.py createsuperuser
-```
-2. pip
-```bash
+  ```
+
+- **Using Pip:**  
+  ```bash
   python manage.py createsuperuser
-```
+  ```
 
-### Seed database
-1. using uv
-```bash
+### 4. Seed the Database
+
+Populate the database with initial data:
+
+- **Using UV:**  
+  ```bash
   uv run python manage.py seed
-```
-2. pip
-```bash
+  ```
+
+- **Using Pip:**  
+  ```bash
   python manage.py seed
-```
+  ```
 
-### Running application
+### 5. Start the Application
 
-1. using uv
-```bash
-  uv run manage.py runserver
-```
-2. pip
-```bash
+Launch the development server:
+
+- **Using UV:**  
+  ```bash
+  uv run python manage.py runserver
+  ```
+
+- **Using Pip:**  
+  ```bash
   python manage.py runserver
-```
+  ```
+
+Open your browser and navigate to: `http://localhost:8000/accounts/login`
 
 
 ## Project Description
