@@ -4,13 +4,13 @@
 
 To install dependencies, you have two options:
 
-0. Using uv:
+1. Using uv:
 
    ```bash
    uv install
    ```
 
-1. Using pip and the requirements.txt file:
+2. Using pip and the requirements.txt file:
 
    ```bash
    pip install -r requirements.txt
