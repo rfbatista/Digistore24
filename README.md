@@ -1,6 +1,8 @@
 # Digistore24
 
-## Dependencies Installation
+## Setup
+
+### Dependencies Installation
 
 To install dependencies, you have two options:
 
@@ -15,6 +17,48 @@ To install dependencies, you have two options:
    ```bash
    pip install -r requirements.txt
    ```
+
+### Migrate database
+1. using uv
+```bash
+	uv run python manage.py migrate
+```
+2. pip
+```bash
+	python manage.py migrate
+```
+
+### Create user
+1. using uv
+```bash
+  uv run python manage.py createsuperuser
+```
+2. pip
+```bash
+  python manage.py createsuperuser
+```
+
+### Seed database
+1. using uv
+```bash
+  uv run python manage.py seed
+```
+2. pip
+```bash
+  python manage.py seed
+```
+
+### Running application
+
+1. using uv
+```bash
+  uv run manage.py runserver
+```
+2. pip
+```bash
+  python manage.py runserver
+```
+
 
 ## Project Description
 
