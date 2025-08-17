@@ -192,3 +192,34 @@ Prediction (1) ←→ (1) PredictionReview
 2. **Audit Trail**: Timestamps on all models for tracking changes
 3. **Separation of Concerns**: Clear separation between prediction data and review workflow
 4. **Scalability**: Efficient querying through proper indexing and relationships
+
+## Thoughts on AI → Human → Automation Transition
+
+The transitions on AI generated to human isn't about choosing between human and artificial intelligence, but about designing systems where they work together synergistically. The goal is to create workflows that leverage the best of both worlds: AI's speed and consistency with human creativity and judgment
+
+## Thoughts on Evaluation and Visualization of Data
+
+Data evaluation and visualization are fundamental to understanding system performance, user behavior, and business outcomes. The goal is to transform raw information into insights that drive better decisions, improve user experiences, and create business value. This requires both technical skills and business acumen, combining analytical rigor with creative presentation.
+
+## Thoughts on integrating Okta SSO
+
+For this proof-of-concept, I used Django’s built-in authentication, but in a real production system we would likely integrate with the company’s identity provider (Okta) to simplify user management and improve security.
+
+There are two realistic approaches:
+
+1. OIDC (OpenID Connect, OAuth2-based)
+
+  - Okta supports OIDC natively, and Django has strong libraries such as django-allauth, mozilla-django-oidc, or python-social-auth.
+
+  - Advantages: easier setup than SAML, well-suited for APIs and modern applications, good support for access/refresh tokens.
+
+  - Recommended if we plan to expose the tool beyond internal use or need tighter integration with other services.
+
+2. SAML 2.0
+
+  - Okta also supports SAML, and Django can integrate using libraries like djangosaml2 or python3-saml.
+
+  - This requires more configuration (certificates, metadata exchange) but is often the mandated standard in enterprise environments.
+
+  - Suitable if the organization’s identity governance mandates SAML for all internal tools.
+
