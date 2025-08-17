@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class PredictionResultConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'prediction_result'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "digistore24.prediction_result"

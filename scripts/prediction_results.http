@@ -1,0 +1,18 @@
+POST http://localhost:8000/api/predictions HTTP/1.1
+Content-Type: application/json
+
+{
+  "product_id": "498589",
+  "rejection_reasons": [
+    {
+      "confidence": "High",
+      "explanation": "The sales page uses the term 'lifetime access', which is not permitted under our guidelines.",
+      "reason_id": 266544
+    },
+    {
+      "confidence": "Medium",
+      "explanation": "The product may require ZFU registration due to its structure as a distance learning program.",
+      "reason_id": 266583
+    }
+  ]
+}

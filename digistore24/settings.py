@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # local
     "digistore24",
     "digistore24.iam",
+    "digistore24.prediction_result",
 ]
 
 MIDDLEWARE = [
