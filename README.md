@@ -1,13 +1,5 @@
 # Digistore24
 
-## Setup Instructions
-
-To start the development server, simply run:
-
-~~~bash
-python manage.py runserver
-~~~
-
 ## Dependencies Installation
 
 To install dependencies, you have two options:
@@ -222,4 +214,30 @@ There are two realistic approaches:
   - This requires more configuration (certificates, metadata exchange) but is often the mandated standard in enterprise environments.
 
   - Suitable if the organization’s identity governance mandates SAML for all internal tools.
+
+## Limitations and Production Readiness
+
+While the current implementation provides a solid foundation for the technical test, several limitations and production considerations need to be addressed before deploying to a live environment. Understanding these constraints helps set realistic expectations and plan for proper production deployment.
+
+### Current System Limitations
+
+#### **1. Authentication and Security**
+- **Basic Authentication**: Django's built-in auth lacks enterprise features like MFA, SSO, and advanced password policies
+- **Session Management**: No session timeout controls, concurrent session limits, or secure session handling
+- **User Management**: Manual user creation and management without role-based access control (RBAC)
+- **Audit Logging**: Limited tracking of user actions and system access patterns
+
+#### **2. Data Management and Scalability**
+- **SQLite Database**: Not suitable for production workloads, concurrent users, or data persistence
+- **No Data Backup**: No automated backup strategy or disaster recovery procedures
+
+#### **3. Performance and Monitoring**
+- **No Performance Monitoring**: No metrics collection, logging, or alerting systems
+- **No Load Balancing**: Single server deployment without horizontal scaling capabilities
+- **No CDN**: Static files served directly from Django without content delivery optimization
+
+#### **4. API and Integration**
+- **Basic REST API**: Limited API features like rate limiting, versioning, or comprehensive error handling
+- **No API Documentation**: Missing OpenAPI/Swagger documentation for API consumers
+- **Limited Validation**: Basic input validation without comprehensive data sanitization
 
