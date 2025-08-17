@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "digistore24",
     "digistore24.iam",
     "digistore24.prediction_result",
+    "digistore24.review",
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "iam.User"
 LOGOUT_REDIRECT_URL = "/accounts/login"
+LOGIN_REDIRECT_URL = "/review"

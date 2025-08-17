@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Review{% endblock %}
+{% block content %}
+    <div class="p-4 bg-white rounded-lg shadow sm:p-5">
+        {% if prediction_review %}
+            <form method="post" action="{% url 'review_product' %}">
+                {% csrf_token %}
+                <input type="hidden" name="pk" value="{{ prediction_review.pk }}">
+                <div class="mb-4">
+                    <strong class="font-bold">Product ID:</strong> {{ prediction_review.prediction.product.product_id }}
+                </div>
+                <div class="mb-4">
+                    <h3 class="font-bold">AI Predicted Rejection Reasons:</h3>
+                    <ul>
+                        <li>
+                            <strong>Reason ID:</strong> {{ prediction_review.prediction.pk }}
+                        </li>
+                        <li>
+                            <strong>Confidence:</strong> {{ prediction_review.prediction.confidence }}
+                        </li>
+                        <li>
+                            <strong>Explanation:</strong> {{ prediction_review.prediction.reason }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="mb-4">{{ form.review_decision }}</div>
+                <div class="mb-4">{{ form.corrected_explanation }}</div>
+                <div class="flex justify-center">
+                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">Submit Review</button>
+                </div>
+            </form>
+        {% else %}
+            <p class="text-center text-gray-500">No reviews available.</p>
+        {% endif %}
+    </div>
+{% endblock %}

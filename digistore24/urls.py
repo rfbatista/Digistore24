@@ -19,9 +19,26 @@ from django.contrib import admin
 from django.urls import include, path
 
 from digistore24.prediction_result.api import ProductPredictions
+from .review.views import review_product, update_review_product
+from digistore24.prediction_result.views import (
+    RejectionReasonListView,
+    update_prediction,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
     path("api/predictions", ProductPredictions.as_view()),
+    path("review", review_product, name="review_product"),
+    path(
+        "review/update/<int:pk>/", update_review_product, name="update_review_product"
+    ),
+    path(
+        "rejection-resons/update/<int:pk>/", update_prediction, name="update_prediction"
+    ),
+    path(
+        "rejection-reasons/",
+        RejectionReasonListView.as_view(),
+        name="rejection_reasons",
+    ),
 ]
