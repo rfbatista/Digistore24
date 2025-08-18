@@ -10,7 +10,7 @@ Choose one of the following methods:
 
 - **Using UV (recommended):**  
   ```bash
-  uv install
+  uv sync
   ```
 
 - **Using Pip:**  
